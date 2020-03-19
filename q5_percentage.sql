@@ -1,0 +1,1 @@
+SELECT CAST(premiered/10 AS TEXT) || "0s" as decade,ROUND( COUNT(*) * 100.0 / (SELECT COUNT(*) FROM titles), 4) FROM titles WHERE premiered NOT NULL GROUP BY (premiered/10);
